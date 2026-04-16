@@ -1,0 +1,88 @@
+import { SettingsProvider } from '@/lib/contexts/SettingsContext';
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import ClientLayout from './ClientLayout';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  themeColor: '#111827',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://ai-calorietracker.vercel.app'),
+  title: {
+    default: 'VernaVitality - AI Powered Nutrition',
+    template: '%s | VernaVitality',
+  },
+  description:
+    'VernaVitality: An advanced AI-powered calorie tracker. Track your daily calories and nutrition with precision food analysis. No account or signup required.',
+  manifest: '/manifest.json',
+  keywords: [
+    'VernaVitality',
+    'calorie tracker',
+    'free calorie counter',
+    'AI nutrition analysis',
+    'food tracker',
+    'diet tracker',
+    'nutrition calculator',
+    'meal planner',
+    'open source calorie tracker',
+    'no account calorie tracker',
+    'AI food analysis',
+  ],
+  authors: [{ name: 'Saravanan', url: '#' }],
+  creator: 'Saravanan',
+  openGraph: {
+    type: 'website',
+    title: 'VernaVitality - AI Powered Nutrition',
+    description:
+      'Free, open-source calorie tracker powered by AI. Track your daily calories and nutrition instantly.',
+    url: 'https://ai-calorietracker.vercel.app',
+    siteName: 'VernaVitality',
+    images: [
+      {
+        url: '/icons/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'VernaVitality Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VernaVitality - AI Powered Nutrition',
+    description:
+      'Free, open-source calorie tracker powered by AI. Track your daily calories and nutrition instantly.',
+    images: ['/icons/icon-512x512.png'],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'VernaVitality',
+  },
+  icons: {
+    icon: '/icons/icon-512x512.png',
+    shortcut: '/icons/icon-192x192.png',
+    apple: '/icons/icon-192x192.png',
+  },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Analytics />
+        <SettingsProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </SettingsProvider>
+      </body>
+    </html>
+  );
+}
