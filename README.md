@@ -61,29 +61,31 @@ The core logic resides in `lib/ai.ts`, facilitating:
 - Node.js 18+
 - A Groq API Key ([Get one here](https://console.groq.com/keys))
 
-### Installation
+### 🔑 Getting Started (Bring Your Own Key)
 
-1. Clone the repository:
+VernaVitality operates on a **Bring Your Own Key (BYOK)** model to ensure your data remains private and your AI usage is under your control.
+
+1. **Clone the repository**:
    ```bash
    git clone git@github.com:Saravanan2005real/VernaVitality-AI-Powered-Metabolic-Intelligence-Calorie-Tracking.git
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
-   # or
-   pnpm install
    ```
 
-3. Start the development server:
+3. **Start the development server**:
    ```bash
    npm run dev
    ```
 
-4. **Configuration**:
-   - Open the application in your browser (`http://localhost:3000`).
-   - Navigate to the **Profile/Settings** section.
-   - Enter your **Groq API Key** to activate the AI features.
+4. **Activate the AI Core**:
+   *   Visit [Groq Console](https://console.groq.com/keys) to create your free API key.
+   *   Open VernaVitality in your browser (`http://localhost:3000`).
+   *   Go to the **Settings** or **Profile** tab.
+   *   **Paste your Groq API Key** into the input field.
+   *   The "Neural Core" will initialize, and you can start tracking meals immediately!
 
 ---
 
